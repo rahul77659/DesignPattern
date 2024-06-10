@@ -1,4 +1,5 @@
 package AdapterDesignPatternExtra;
 
-public class ITarget {
+public interface ITarget {
+    public void request();
 }
