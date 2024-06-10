@@ -1,48 +1,34 @@
-package prototypeDesign;
+package ProtoTypeDesignPattern;
 
-public class IntelligentStudent extends Student{
+
+public class IntelligentStudent extends Student {
     private int iq;
-//
-//    public IntelligentStudent(String batchName, double avgBatchPsp, String instructorName, String monthOfEnrollment, String currentModule, String name, String phoneNumber, String email, int iq) {
-//        super(batchName, avgBatchPsp, instructorName, monthOfEnrollment, currentModule, name, phoneNumber, email);
-//        this.iq = iq;
-//    }
 
-    public IntelligentStudent(String batchName, int iq) {
-        super(batchName);
-        this.iq = iq;
+    public IntelligentStudent() { }
+
+    public IntelligentStudent(IntelligentStudent is) {
+        super(is);
+        this.iq = is.iq;
     }
 
-
-
-    public IntelligentStudent(int iq) {
-        this.iq = iq;
-    }
-    public IntelligentStudent() {
-        this.iq = iq;
-    }
-
-
-
-    public int getIq(){
-        return iq;
-    }
     @Override
-    public String toString() {
-        return "IntelligentStudent [iq=" + iq + "]";
+    public IntelligentStudent clone() {
+//        IntelligentStudent copy = new IntelligentStudent();
+//        copy.setName(this.getName());
+//        copy.setAge(this.getAge());
+//        copy.setPsp(this.getPsp());
+//        copy.setBatchName(this.getBatchName());
+//        copy.setAvgBatchPsp(this.getAvgBatchPsp());
+//        copy.iq = this.iq;
+
+        return new IntelligentStudent(this);
+    }
+
+    public int getIq() {
+        return iq;
     }
 
     public void setIq(int iq) {
         this.iq = iq;
     }
-
-    public IntelligentStudent copy(){
-        IntelligentStudent intelligentStudent = new IntelligentStudent();
-        intelligentStudent.setBatchName(this.getBatchName());
-        intelligentStudent.setAvgBatchPsp(this.getAvgBatchPsp());// similarly copy all
-        intelligentStudent.iq = this.iq;
-
-        return intelligentStudent;
-    }
-
 }

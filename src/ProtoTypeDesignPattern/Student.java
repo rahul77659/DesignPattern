@@ -1,56 +1,59 @@
-package prototypeDesign;
-
-import ProtoTypeDesignPattern.ProtoType;
-
-public class Student implements ProtoType<Student> {
+package ProtoTypeDesignPattern;
+public class Student implements ProtoType <Student> {
+    private String name;
+    private int age;
+    private double psp;
     private String batchName;
     private double avgBatchPsp;
-    private String instructorName;
-    private String monthOfEnrollment;
-    private String currentModule;
-    private String name;
-    private String phoneNumber;
-    private String email;
+    private int count = 1;
 
-    public  Student clone(){
-        Student student = new Student();
-        student.avgBatchPsp = this.avgBatchPsp;
-        student.batchName = this.batchName;
-        student.instructorName = this.instructorName;
-        student.monthOfEnrollment = this.monthOfEnrollment;
-        student.currentModule = this.currentModule;
-        return student;
+    public Student() { }
+
+    public Student(Student student) {
+        this.name = student.name;
+        this.age = student.age;
+        this.batchName = student.batchName;
+        this.avgBatchPsp = student.avgBatchPsp;
+        this.psp = student.psp;
+        this.count = student.count;
     }
 
     @Override
-    public String toString() {
-        return "Student{" +
-                "batchName='" + batchName + '\'' +
-                ", avgBatchPsp=" + avgBatchPsp +
-                ", instructorName='" + instructorName + '\'' +
-                ", monthOfEnrollment='" + monthOfEnrollment + '\'' +
-                ", currentModule='" + currentModule + '\'' +
-                ", name='" + name + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public Student clone() {
+//        Student copy = new Student();
+//        copy.name = this.name;
+//        copy.age = this.age;
+//        copy.psp = this.psp;
+//        copy.batchName = this.batchName;
+//        copy.avgBatchPsp = this.avgBatchPsp;
+//        copy.count = this.count;
+
+        return new Student(this);
     }
 
-    public Student(String batchName) {
-        this.batchName = batchName;
-    }
-    public Student() {
+    public String getName() {
+        count++;
+        return name;
     }
 
-    public Student(String batchName, double avgBatchPsp, String instructorName, String monthOfEnrollment, String currentModule, String name, String phoneNumber, String email) {
-        this.batchName = batchName;
-        this.avgBatchPsp = avgBatchPsp;
-        this.instructorName = instructorName;
-        this.monthOfEnrollment = monthOfEnrollment;
-        this.currentModule = currentModule;
+    public void setName(String name) {
         this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public double getPsp() {
+        return psp;
+    }
+
+    public void setPsp(double psp) {
+        this.psp = psp;
     }
 
     public String getBatchName() {
@@ -68,54 +71,4 @@ public class Student implements ProtoType<Student> {
     public void setAvgBatchPsp(double avgBatchPsp) {
         this.avgBatchPsp = avgBatchPsp;
     }
-
-    public String getInstructorName() {
-        return instructorName;
-    }
-
-    public void setInstructorName(String instructorName) {
-        this.instructorName = instructorName;
-    }
-
-    public String getMonthOfEnrollment() {
-        return monthOfEnrollment;
-    }
-
-    public void setMonthOfEnrollment(String monthOfEnrollment) {
-        this.monthOfEnrollment = monthOfEnrollment;
-    }
-
-    public String getCurrentModule() {
-        return currentModule;
-    }
-
-    public void setCurrentModule(String currentModule) {
-        this.currentModule = currentModule;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-
 }

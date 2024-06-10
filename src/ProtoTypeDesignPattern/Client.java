@@ -1,63 +1,37 @@
-package prototypeDesign;
-
-//package designPatterns.prototypeRegistry;
+package  ProtoTypeDesignPattern;
 
 public class Client {
+    public static void populateRegistryDummy(StudentRegistry studentRegistry) {
+        // create student prototypes
+        Student apr23BatchPrototype = new Student();
+        apr23BatchPrototype.setBatchName("Apr 23 Beg Java Batch");
+        apr23BatchPrototype.setAvgBatchPsp(90.0);
+
+        studentRegistry.register("apr23Beg", apr23BatchPrototype);
+
+        IntelligentStudent may24ISPrototype = new IntelligentStudent();
+        may24ISPrototype.setAvgBatchPsp(99.0);
+        may24ISPrototype.setBatchName("May 24 Beg Intelligent Student batch");
+
+        studentRegistry.register("may24IS", may24ISPrototype);
+    }
+
     public static void main(String[] args) {
-        Student studentApr23Proto = new Student();
-        studentApr23Proto.setBatchName("Apr23");
-        studentApr23Proto.setAvgBatchPsp(80);
-        studentApr23Proto.setInstructorName("Naman");
-        studentApr23Proto.setMonthOfEnrollment("0423");
-        studentApr23Proto.setCurrentModule("DSA");
-
-        Student studentMar23Proto = new Student();
-        studentMar23Proto.setBatchName("Mar23");
-        studentMar23Proto.setAvgBatchPsp(90);
-        studentMar23Proto.setInstructorName("Sandeep");
-        studentMar23Proto.setMonthOfEnrollment("0323");
-        studentMar23Proto.setCurrentModule("DSA");
-
         StudentRegistry studentRegistry = new StudentRegistry();
-        studentRegistry.register("Apr23", studentApr23Proto);
-        studentRegistry.register("Mar23", studentMar23Proto);
+        populateRegistryDummy(studentRegistry);
 
 
-        Student pratyushApr23 = studentRegistry.get("Apr23").copy();
-        pratyushApr23.setName("Pratyush");
-        pratyushApr23.setEmail("peatyush@email.com");
-        pratyushApr23.setPhoneNumber("1234");
+        // a new student joins named lokesh with age 20 and psp as 10
+        Student lokesh = studentRegistry.get("apr23Beg").clone();
+        lokesh.setName("Lokesh");
+        lokesh.setAge(21);
+        lokesh.setPsp(98.0);
 
-        Student ananthApr23 = studentRegistry.get("Mar23").copy();
-        ananthApr23.setName("Ananth");
-        ananthApr23.setEmail("ananth@email.com");
-        ananthApr23.setPhoneNumber("5678");
+        Student rahul = studentRegistry.get("may24IS").clone();
+        lokesh.setName("Rahul");
+        lokesh.setAge(22);
+        lokesh.setPsp(99.0);
 
-        Student st = new IntelligentStudent(100);
-        ((IntelligentStudent)  st).setIq(200);
-        st.setBatchName("Jan23");
-        st.setAvgBatchPsp(8);
-        st.setInstructorName("Gaurav");
-        st.setMonthOfEnrollment("042223");
-        st.setCurrentModule("DSA");
-        studentRegistry.register("Jan23", st);
-
-        Student ananthJan23 = studentRegistry.get("Jan23").copy();
-        ananthJan23.setName("Ananth");
-        ananthJan23.setEmail("ananth@email.com");
-        ananthJan23.setPhoneNumber("5678");
-
-
-
-        System.out.println(ananthJan23);
-        System.out.println(ananthJan23.getBatchName());
-        System.out.println(ananthJan23.getAvgBatchPsp());
-        System.out.println(ananthJan23.getCurrentModule());
-//        System.out.println(ananthJan23.((ananthJan23)st).getIq);
-        System.out.println(((IntelligentStudent)  st).getIq());
-        System.out.println(ananthApr23);
-
-
-
+        System.out.println("DEBUG");
     }
 }
