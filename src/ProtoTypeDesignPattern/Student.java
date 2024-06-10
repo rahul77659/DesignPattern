@@ -1,6 +1,8 @@
 package prototypeDesign;
 
-public class Student {
+import ProtoTypeDesignPattern.ProtoType;
+
+public class Student implements ProtoType<Student> {
     private String batchName;
     private double avgBatchPsp;
     private String instructorName;
@@ -10,7 +12,7 @@ public class Student {
     private String phoneNumber;
     private String email;
 
-    public Student copy(){
+    public  Student clone(){
         Student student = new Student();
         student.avgBatchPsp = this.avgBatchPsp;
         student.batchName = this.batchName;
