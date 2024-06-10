@@ -1,4 +1,5 @@
 package AdapterDesignPattern;
 
-public class Client {
+public class PhonePe {
+
 }

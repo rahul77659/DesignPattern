@@ -1,4 +1,4 @@
 package AdapterDesignPattern;
 
-public class Adaptee {
+public class YesbankAPIAdapter {
 }
