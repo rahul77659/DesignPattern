@@ -20,6 +20,7 @@ public class IntelligentStudent extends Student {
 //        copy.setBatchName(this.getBatchName());
 //        copy.setAvgBatchPsp(this.getAvgBatchPsp());
 //        copy.iq = this.iq;
+//        copy.count=this.count;
 
         return new IntelligentStudent(this);
     }

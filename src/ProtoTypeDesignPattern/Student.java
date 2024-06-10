@@ -5,9 +5,10 @@ public class Student implements ProtoType <Student> {
     private double psp;
     private String batchName;
     private double avgBatchPsp;
-    private int count = 1;
+    private int count = 1;/////////////////////////////important /////////////
+    public Student() {
 
-    public Student() { }
+    }
 
     public Student(Student student) {
         this.name = student.name;
@@ -17,6 +18,8 @@ public class Student implements ProtoType <Student> {
         this.psp = student.psp;
         this.count = student.count;
     }
+
+
 
     @Override
     public Student clone() {

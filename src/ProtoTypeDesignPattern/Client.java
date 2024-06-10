@@ -32,6 +32,6 @@ public class Client {
         lokesh.setAge(22);
         lokesh.setPsp(99.0);
 
-        System.out.println("DEBUG");
+        System.out.println(studentRegistry);
     }
 }
