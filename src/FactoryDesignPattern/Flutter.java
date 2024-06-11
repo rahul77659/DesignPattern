@@ -10,7 +10,23 @@ public class Flutter {
         System.out.println("Setting refresh rate");
     }
 
-    public UIFactory createFactory() {
+
+//   public UIFactory createFactory() {
+//        if (supportedPlatforms == SupportedPlatforms.ANDROID) {
+//            return new AndroidUIFactory();
+//        } else if (supportedPlatforms == SupportedPlatforms.IOS) {
+//            return new IOSUIFactory();
+//        }
+//    }
+
+
+   public UIFactory createFactory(){
         return UIFactoryFactory.getUIFactory(supportedPlatforms);
     }
+
+
+
+//    public UIFactory createFactory() {
+//        return UIFactoryFactory.getUIFactory(supportedPlatforms);
+//    }
 }
