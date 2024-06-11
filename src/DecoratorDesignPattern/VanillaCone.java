@@ -1,6 +1,8 @@
 package Decorator;
 
-public class VanillaCone implements Icecrean{
+import DecoratorDesignPattern.IceCreamConeConstituents;
+
+public class VanillaCone implements IceCreamConeConstituents {
     @Override
     public int getCost() {
         return 30;

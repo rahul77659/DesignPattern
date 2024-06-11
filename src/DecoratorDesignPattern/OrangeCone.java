@@ -1,13 +1,19 @@
-package Decorator;
+package DecoratorDesignPattern;
 
-public class OrangeCone implements Icecrean{
+import DecoratorDesignPattern.IceCreamConeConstituents;
+
+public class OrangeCone implements IceCreamConeConstituents {
+
+    @Override
+    public String getDescription() {
+        return "Orange Cone";
+    }
+
     @Override
     public int getCost() {
         return 20;
     }
 
-    @Override
-    public String getDescription() {
-        return "Orange COne";
+    public void setVitaminCLevel(int newLevel) {
     }
 }

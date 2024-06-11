@@ -1,13 +1,20 @@
-package Decorator;
+package DecoratorDesignPattern;
 
-public class VanillaScoop implements Icecrean{
-    @Override
-    public int getCost() {
-        return 30;
+public class VanillaScoop implements IceCreamConeConstituents {
+    private IceCreamConeConstituents iceCreamConeConstituents;
+
+    public VanillaScoop(IceCreamConeConstituents iceCreamConeConstituents) {
+        this.iceCreamConeConstituents = iceCreamConeConstituents;
     }
 
     @Override
     public String getDescription() {
-        return "Vanilla COne";
+        return iceCreamConeConstituents.getDescription() + " + Vanilla Scoop";
     }
+
+    @Override
+    public int getCost() {
+        return iceCreamConeConstituents.getCost() + 10;
+    }
+
 }
