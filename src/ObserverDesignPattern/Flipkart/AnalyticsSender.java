@@ -1,4 +1,4 @@
-package ObserverDesignPattern;
+package ObserverDesignPattern.Flipkart;
 public class AnalyticsSender implements OrderPlacedSubscriber, OrderCancelledSubscriber {
 
     public AnalyticsSender() {

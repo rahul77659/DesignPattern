@@ -1,4 +1,4 @@
-package ObserverDesignPattern;
+package ObserverDesignPattern.Flipkart;
 
 import java.util.ArrayList;
 import java.util.List;

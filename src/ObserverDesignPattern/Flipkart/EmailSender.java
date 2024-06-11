@@ -1,4 +1,4 @@
-package ObserverDesignPattern;
+package ObserverDesignPattern.Flipkart;
 
 public class EmailSender implements OrderPlacedSubscriber {
 
