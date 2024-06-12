@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Flipkart {
     private static Flipkart instance;
-    private List<OrderPlacedSubscriber> orderPlacedSubscribers = new ArrayList<>();
 
     public static Flipkart getInstance() {
         if (instance == null) {
@@ -15,6 +14,9 @@ public class Flipkart {
         return instance;
     }
 
+    private List<OrderPlacedSubscriber> orderPlacedSubscribers = new ArrayList<>();
+
+
     void registerSubscriber(OrderPlacedSubscriber orderPlacedSubscriber) {
         orderPlacedSubscribers.add(orderPlacedSubscriber);
     }
@@ -22,7 +24,7 @@ public class Flipkart {
     void unregisterSubscriber(OrderPlacedSubscriber orderPlacedSubscriber) {
         orderPlacedSubscribers.remove(orderPlacedSubscriber);
     }
-
+///event
     public void orderPlaced() {
         // an.notify()
         // ig.generateInvoice()
@@ -30,7 +32,7 @@ public class Flipkart {
         //Amamzon logic goes here
 
         for (OrderPlacedSubscriber orderPlacedSubscriber : orderPlacedSubscribers) {
-            orderPlacedSubscriber.announceOrderPlaced();
+            orderPlacedSubscriber.onOrderPlaced();
         }
     }
 }

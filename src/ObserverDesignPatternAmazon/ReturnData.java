@@ -1,4 +1,4 @@
-package ObserverDesignPattern.Amazon;
+package ObserverDesignPatternAmazon;
 
 public class ReturnData {
     private String data;

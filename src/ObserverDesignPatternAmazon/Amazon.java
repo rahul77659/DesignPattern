@@ -1,4 +1,4 @@
-package ObserverDesignPattern.Amazon;
+package ObserverDesignPatternAmazon;
 
 import java.util.ArrayList;
 import java.util.List;

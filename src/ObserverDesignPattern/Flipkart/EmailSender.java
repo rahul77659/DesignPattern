@@ -8,7 +8,7 @@ public class EmailSender implements OrderPlacedSubscriber {
     }
 
     @Override
-    public ReturnData announceOrderPlaced() {
+    public ReturnData onOrderPlaced() {
         sendEmail();
         return null;
     }

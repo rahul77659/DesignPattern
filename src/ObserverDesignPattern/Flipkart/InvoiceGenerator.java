@@ -8,7 +8,7 @@ public class InvoiceGenerator implements OrderPlacedSubscriber {
     }
 
     @Override
-    public ReturnData announceOrderPlaced() {
+    public ReturnData onOrderPlaced() {
         generateInvoice();
         return null;
     }

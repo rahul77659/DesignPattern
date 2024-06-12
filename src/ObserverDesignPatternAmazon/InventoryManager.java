@@ -1,4 +1,4 @@
-package ObserverDesignPattern.Amazon;
+package ObserverDesignPatternAmazon;
 
 
 public class InventoryManager implements OrderPlacedSubscriber{ //subscriber -> listens to event and takes some action

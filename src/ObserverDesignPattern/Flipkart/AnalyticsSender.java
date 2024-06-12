@@ -7,7 +7,7 @@ public class AnalyticsSender implements OrderPlacedSubscriber, OrderCancelledSub
     }
 
     @Override
-    public ReturnData announceOrderPlaced() {
+    public ReturnData onOrderPlaced() {
         System.out.println("Updating analaytics");
         return null;
     }

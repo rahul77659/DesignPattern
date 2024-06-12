@@ -1,4 +1,4 @@
-package ObserverDesignPattern.Amazon;
+package ObserverDesignPatternAmazon;
 
 public class Client {
     public static void main(String[] args) {

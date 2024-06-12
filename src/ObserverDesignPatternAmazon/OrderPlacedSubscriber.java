@@ -1,4 +1,4 @@
-package ObserverDesignPattern.Amazon;
+package ObserverDesignPatternAmazon;
 
 public interface OrderPlacedSubscriber { // structure of a subscriber
     ReturnData orderPlaceEvent(); //action that we need to perform when an order place event is consumed

@@ -1,4 +1,4 @@
-package ObserverDesignPattern.Amazon;
+package ObserverDesignPatternAmazon;
 
 public class CashBackGenerator implements  OrderPlacedSubscriber{
     public CashBackGenerator() {

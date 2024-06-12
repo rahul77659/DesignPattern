@@ -1,4 +1,4 @@
-package ObserverDesignPattern.Amazon;
+package ObserverDesignPatternAmazon;
 
 public class InvoiceGenerator implements OrderPlacedSubscriber{ //subscriber -> listens to event and takes some action
 
